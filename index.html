@@ -100,7 +100,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-8761a84e84bb8330db56053ad4c1609a.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-76b457921517e289c39f495d7dc3a19e.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -204,7 +204,7 @@
 <h2>RMarkdownユーザーのためのQuarto</h2>
 <p>ニッタ ジョエル</p>
 <p><br></p>
-<p><code>Bio"Pack"athon 2014 #12</code></p>
+<p><a href="https://biopackathon.connpass.com/event/332275/"><code>Bio"Pack"athon 2014 #12</code></a></p>
 <p><br></p>
 <p><span class="medium"><a href="https://joelnitta.github.io/2024-12-11-biopack" class="uri">https://joelnitta.github.io/2024-12-11-biopack</a></span></p>
 </section>
@@ -575,9 +575,78 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZml0ID0gbG0obXBnIH4gYW0s
 <aside><div>
 <p><a href="https://github.com/r-wasm/quarto-live" class="uri">https://github.com/r-wasm/quarto-live</a></p>
 </div></aside></section>
-<section id="extensions" class="slide level2 line">
+<section id="extensions" class="slide level2">
 <h2>Extensions</h2>
-<p>Check out my <a href="https://scholar.google.com/citations?hl=en&amp;user=FtzrMYwAAAAJ"><i class="ai  ai-google-scholar" aria-label="google-scholar"></i> Google Scholar</a></p>
+<ul>
+<li><p>Extensionsとは、Quartoの機能を拡張するコード</p></li>
+<li><p>プロジェクトごとにインストールが必要（Gitのsub repositoryみたいなもの）</p></li>
+<li><p>たくさんあります！ <a href="https://quarto.org/docs/extensions/" class="uri">https://quarto.org/docs/extensions/</a></p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><code>quarto add &lt;gh-org&gt;/&lt;gh-repo&gt;</code> で加える
+<ul>
+<li>例えば <code>quarto add _extensions/schochastics/academicons</code></li>
+<li>加えたコードをコミットするべし</li>
+</ul></li>
+</ul>
+</section>
+<section id="extensionsの例academicons" class="slide level2 line">
+<h2>Extensionsの例：academicons</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<pre><code>Google Scholar [{{&lt; ai google-scholar &gt;}}](https://scholar.google.com/citations?hl=en&amp;user=FtzrMYwAAAAJ)</code></pre>
+</div><div class="column" style="width:40%;">
+<p>Google Scholar <a href="https://scholar.google.com/citations?hl=en&amp;user=FtzrMYwAAAAJ"><i class="ai  ai-google-scholar" aria-label="google-scholar"></i></a></p>
+</div></div>
+
+<aside><div>
+<p><a href="https://github.com/schochastics/academicons" class="uri">https://github.com/schochastics/academicons</a></p>
+</div></aside></section></section>
+<section>
+<section id="注意点" class="title-slide slide level1 center">
+<h1>注意点</h1>
+
+</section>
+<section id="キーが分からないときは検索バーをスマートに使う" class="slide level2">
+<h2>キーが分からないときは検索バーをスマートに使う</h2>
+<ul>
+<li><p><a href="https://quarto.org/" class="uri">https://quarto.org/</a>から検索して、<strong>使いたいフォーマット</strong>のドキュメンテーションを見る</p></li>
+<li><p>同じキー（例えば、<code>title</code>）でも、アウトプットのフォーマットによって使い方が異なる場合があります</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+
+<img data-src="images/quarto_website_search.png" class="r-stretch"></section>
+<section id="cssとscssを少し勉強するといい" class="slide level2">
+<h2>CSS（とSCSS）を少し勉強するといい</h2>
+<ul>
+<li><p>特にスライドやウェブサイトの作成において重要です</p></li>
+<li><p>Fenced Divの使い方の理解も深まります</p></li>
+<li><p>おすすめ：Emil Hvitfeldtの<a href="https://emilhvitfeldt.com/project/slidecraft-101/">Slidecraft-101</a></p></li>
+</ul>
+</section>
+<section id="色々なyamlがある" class="slide level2">
+<h2>色々なYAMLがある</h2>
+<ul>
+<li>コードチャンクの中のYAML</li>
+<li>文書（<code>Qmd</code>ファイル）のヘッダーのYAML</li>
+<li>プロジェクトの<code>_quarto.yml</code></li>
+<li>他にもあります・・</li>
+<li>使いわけがちょっと難しい</li>
+</ul>
+</section>
+<section id="まとめ" class="slide level2">
+<h2>まとめ</h2>
+<ul>
+<li>QuartoはRMarkdownの次世代バージョンです。</li>
+<li>Quartoの機能は非常に豊富で、デザインも洗練されています。</li>
+<li>機能が多すぎて全貌が掴みにくいこともあります。</li>
+<li>どんな小さなプロジェクトでもいいので、とりあえず使ってみるのがおすすめです。</li>
+</ul>
 
 <script type="webr-data">
 eyJvcHRpb25zIjp7ImJhc2VVcmwiOiJodHRwczovL3dlYnIuci13YXNtLm9yZy92MC40LjEvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsiZXZhbHVhdGUiLCJrbml0ciIsImh0bWx0b29scyJdLCJyZXBvcyI6W119LCJyZW5kZXJfZGYiOiJkZWZhdWx0In0=
