@@ -52,6 +52,13 @@ execute:
 
 - 何か分からないことがある時は**オフィシャルサイト**を参考にしてください <https://quarto.org/>
 
+## アウトライン
+
+- Quartoとは？
+- QuartoとRmarkdownの違い
+- Quartoができることの例
+- 注意点
+
 # Quartoとは？
 
 ## Quartoとは？ {.line}
@@ -280,7 +287,7 @@ Rの外ですから、`rmarkdown::render()`ではなく、CLIから実行しま�
 
 ::::
 
-# Quartoができることの例 {.line}
+# Quartoができることの例
 
 ## LaTexなしのPDF（Typst）{.line}
 
