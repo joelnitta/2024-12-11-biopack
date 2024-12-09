@@ -1,6 +1,6 @@
 /*-- scss:defaults --*/
 $theme-black: #1b1b1b;
-$theme-teal: #c2ba44;
+$theme-gold: #c2ba44;
 $theme-white: #F9F9F8;
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
@@ -8,8 +8,8 @@ $theme-white: #F9F9F8;
 
 $body-bg: $theme-black;
 $body-color: $theme-white;
-$link-color: $theme-teal;
-$code-color: $theme-teal;
+$link-color: $theme-gold;
+$code-color: $theme-gold;
 
 $font-family-sans-serif: 'Noto Sans JP', sans-serif;
 $presentation-heading-font: 'Zen Kaku Gothic Antique', sans-serif;
@@ -30,7 +30,7 @@ $presentation-heading-font: 'Zen Kaku Gothic Antique', sans-serif;
 
 .line {
   h1, h2, h3, h4, h5 {
-    border-bottom: 2px solid $theme-teal;
+    border-bottom: 2px solid $theme-gold;
     padding-bottom: 0.2em;
   }
 }
