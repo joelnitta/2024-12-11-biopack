@@ -16,7 +16,7 @@ execute:
 
 <br>
 
-`Bio"Pack"athon 2014 #12`
+[`Bio"Pack"athon 2014 #12`](https://biopackathon.connpass.com/event/332275/)
 
 <br>
 
@@ -356,6 +356,72 @@ plot(fit)
 
 ::::
 
-## Extensions {.line}
+## Extensions
 
-Check out my [{{< ai google-scholar >}} Google Scholar](https://scholar.google.com/citations?hl=en&user=FtzrMYwAAAAJ)
+- Extensionsとは、Quartoの機能を拡張するコード
+
+- プロジェクトごとにインストールが必要（Gitのsub repositoryみたいなもの）
+
+- たくさんあります！ <https://quarto.org/docs/extensions/>
+
+---
+
+- `quarto add <gh-org>/<gh-repo>` で加える
+  - 例えば `quarto add _extensions/schochastics/academicons`
+  - 加えたコードをコミットするべし
+
+## Extensionsの例：academicons {.line}
+
+:::: {.columns}
+
+::: {.column width="60%"}
+```
+Google Scholar [{{{< ai google-scholar >}}}](https://scholar.google.com/citations?hl=en&user=FtzrMYwAAAAJ)
+```
+
+:::
+
+::: {.column width="40%"}
+Google Scholar [{{< ai google-scholar >}}](https://scholar.google.com/citations?hl=en&user=FtzrMYwAAAAJ)
+:::
+
+::::
+
+::: {.aside}
+<https://github.com/schochastics/academicons>
+:::
+
+# 注意点
+
+## キーが分からないときは検索バーをスマートに使う
+
+- <https://quarto.org/>から検索して、**使いたいフォーマット**のドキュメンテーションを見る
+
+- 同じキー（例えば、`title`）でも、アウトプットのフォーマットによって使い方が異なる場合があります
+
+---
+
+![](images/quarto_website_search.png)
+
+## CSS（とSCSS）を少し勉強するといい
+
+- 特にスライドやウェブサイトの作成において重要です
+
+- Fenced Divの使い方の理解も深まります
+
+- おすすめ：Emil Hvitfeldtの[Slidecraft-101](https://emilhvitfeldt.com/project/slidecraft-101/)
+
+## 色々なYAMLがある
+
+- コードチャンクの中のYAML
+- 文書（`Qmd`ファイル）のヘッダーのYAML
+- プロジェクトの`_quarto.yml`
+- 他にもあります・・
+- 使いわけがちょっと難しい
+
+## まとめ
+
+- QuartoはRMarkdownの次世代バージョンです。
+- Quartoの機能は非常に豊富で、デザインも洗練されています。
+- 機能が多すぎて全貌が掴みにくいこともあります。
+- どんな小さなプロジェクトでもいいので、とりあえず使ってみるのがおすすめです。
