@@ -1,18 +1,326 @@
 ---
-title: "My Presentation"
-author: "Joel Nitta"
 format:
   revealjs:
     incremental: false
-    css: styles.css
+    theme: [dark, custom.scss]
 execute: 
   echo: true
 ---
 
-## Amazing content
+## RMarkdownユーザーのためのQuarto {.theme-slide1 .line}
 
-ipsum lorem
+ニッタ ジョエル
 
-## More amazing content
+<br>
 
-blip blop
+`Bio"Pack"athon 2014 #12`
+
+<br>
+
+[<https://joelnitta.github.io/2024-12-11-biopack>]{.medium}
+
+## 自己紹介：`@joelnitta` {.line}
+
+::::: columns
+::: {.column width="50%"}
+- 千葉大学 准教授
+- シダ植物の進化と生態学
+- Rパッケージ開発<br>（進化生態学向け）
+
+<https://www.joelnitta.com>
+:::
+
+::: {.column width="50%"}
+![](https://github.com/joelnitta/joelnitta-site/blob/master/static/media/headers/research_img2.jpg?raw=true){fig-alt="Image of Joel Nitta in field" height="450"}
+:::
+:::::
+
+## 誰のためのお話？ {.line}
+
+- RMarkdownを使っている方でQuartoが気になっている方
+
+- Quartoの初心者
+
+## 注意 {.line}
+
+- Quartoは非常に**大きなプロジェクト**で、この発表ではとても全部をカバーすることができません。
+
+- 私は**エキスパートではありません**。まだまだ分からないことがいっぱいあります。
+
+- 何か分からないことがある時は**オフィシャルサイト**を参考にしてください <https://quarto.org/>
+
+# Quartoとは？
+
+## Quartoとは？ {.line}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+- R（など）の計算結果を直接文章に挿入するツール
+
+- 様々な出力形式
+
+- RMarkdownのsuccessor
+:::
+
+::: {.column width="60%"}
+![](https://rstudio.github.io/cheatsheets/html/images/quarto-illustration.png)
+
+[Artwork from "Hello, Quarto" keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by [Allison Horst](https://allisonhorst.com/cetinkaya-rundel-lowndes-quarto-keynote).]{.small}
+
+:::
+
+::::
+
+## なぜQuartoを使えばいい？ {.line .smaller}
+
+-  **①** [RMarkdownよりも**楽**で、機能が**豊富**だからです。]{.medlarge}
+  - [RMarkdownでは用途に合わせて色々なパッケージが必要でした]{.medlarge}
+    - `{blogdown}` (ブログ)
+    - `{xaringan}` (スライド)
+    - `{distill}` (ウェブサイト)
+    - `{officedown}` (MS Word)
+    - `{rticles}` (学術論文)
+
+- [**Quartoだけでこれが全部できます！**]{.medlarge}
+
+## なぜQuartoを使えばいい？ {.line}
+
+-  **②** **複数のプログラミング言語**が使える
+    - `R`
+    - `Python`
+    - `Julia`
+    - `Observable JS`
+
+## Quartoのインストール {.line}
+
+- RStudioとバンドル化しているので、基本的な使い方はRStudioだけで十分
+- 更新したい時は個別にインストールが必要（RStudioの更新の際、一緒に更新されません）
+- <https://quarto.org/docs/get-started/>から簡単にできます
+
+## Quartoの使い方 {.line}
+
+- ファイル拡張子は`.Qmd`
+- 基本的にはRmarkdownファイルの記述方法と**同じでもいい**
+    - つまり、`.Rmd`ファイルの拡張子を`.Qmd`に変えるだけで多くの場合そのまま使えます
+
+# QuartoとRmarkdownの違い
+
+## QuartoはRと別物 {.line}
+
+- Quarto CLIが必要（RMarkdownはRパッケージ）
+
+- Pandoc（様々な文書ファイル形式を変換するソフト）を基にしている
+
+> Quarto is an open-source scientific and technical publishing system **built on Pandoc**
+
+::: {.aside}
+<https://github.com/quarto-dev/quarto>
+:::
+
+## {.center}
+
+![](https://quarto.org/docs/get-started/hello/images/rstudio-qmd-how-it-works.png)
+
+## チャンクオプションの記述法 {.line}
+
+- チャンクオプションは `{ }` の中に書くのではなく、`#|` コメントを使って、**yml形式**で書きます
+
+---
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+#### R Markdown
+
+```` markdown
+```{{r, fig-airquality, fig.cap="Temperature and ozone level.", warning=FALSE}}
+
+library(ggplot2)
+
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess")
+```
+````
+:::
+
+::: {.column width="50%"}
+
+#### Quarto
+
+```` markdown
+```{{r}}
+#| label: fig-airquality
+#| fig-cap: "Temperature and ozone level."
+#| warning: false
+
+library(ggplot2)
+
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess")
+```
+````
+:::
+
+::::
+
+## Quarto YAML {.line}
+
+- QuartoのYAML設定はRMarkdownと若干違います。
+  - 言葉と言葉の間のマークは `_`（アンダースコア）ではなく、`-`（ハイフェン）です
+  - 物によってキーが違います。例えば、出力の種類のキーは`output`ではなく、`format`です
+
+---
+
+::: {layout-ncol="2"}
+#### R Markdown
+
+``` yaml
+title: "My Document"
+output:
+  html_document:
+    toc: true
+    number_sections: true
+    css: styles.css
+```
+
+#### Quarto
+
+``` yaml
+title: "My Document"
+format:
+  html:
+    toc: true
+    number-sections: true
+    css: styles.css
+```
+:::
+
+## レンダーの方法 {.line}
+
+Rの外ですから、`rmarkdown::render()`ではなく、CLIから実行します：
+
+`quarto render`
+
+（`{quarto}`パッケージには`quarto_render()`関数がありますが、これはラッパーです）
+
+## Fenced Divの使い方 {.line}
+
+- Fenced Div とは、カスタム HTML 要素や特定のスタイル、レイアウトを適用するための柔軟な仕組み
+  - 元々Pandocで始まった記述法。裏では HTML の`div`と同じもの。
+  - `CSS`ファイルを指定することによって、カスタムな`div`を作ることができます
+    -  文字の色やサイズ、などの指定
+
+- `:::` で始まって、また`:::`で終わる（`:`の数は三つ以上）
+
+---
+
+- 例えば、スライドショーでは`{.incremental}`は内容が一つずつ現れるスタイル
+
+:::::: columns
+::: {.column width="50%"}
+#### コード {.line}
+``` markdown
+::: {.incremental}
+
+- ラーメン
+- 餃子
+
+:::
+```
+:::
+
+:::: {.column width="50%"}
+#### 出力 {.line}
+::: incremental
+- ラーメン
+- 餃子
+:::
+::::
+::::::
+
+## Shortcodeの使い方 {.line}
+
+- Shortcodeは「様々な様子を挿入する」とう意味でFenced Divと似ています。
+
+- 書き方：（例えば） `{{{< meta title >}}}` を書くと、現在の文章のタイトルを返します。
+
+- 他のShortcodeの例:
+  - [`pagebreak`: ページを改める]{.medium}
+  - [`video`: ビデオを挿入する]{.medium}
+  - [`include`: 別の`Qmd`ファイルの内容を挿入する]{.medium}
+
+::: {.aside}
+<https://quarto.org/docs/extensions/shortcodes.html>
+:::
+
+---
+
+:::: {.columns}
+
+::: {.column width="60%"}
+#### コード
+
+``` markdown
+{{{< video https://www.youtube.com/embed/wo9vZccmqwc >}}}
+```
+
+:::
+
+::: {.column width="40%"}
+#### 出力
+{{< video https://www.youtube.com/embed/wo9vZccmqwc  >}}
+:::
+
+::::
+
+# Quartoができることの例 {.line}
+
+## LaTexなしのPDF（Typst）{.line}
+
+::: {layout-ncol=4}
+
+![IEEE](https://quarto.org/docs/output-formats/images/typst-format-ieee.png){.lightbox group="custom-formats" fig-alt="Screenshot of a page showing a article styled according IEEE standards. The title is centered with authors below in two columns."}
+
+![Poster](https://quarto.org/docs/output-formats/images/typst-format-poster.png){.lightbox group="custom-formats" fig-alt="Screenshot of a poster in landscape orientiation. The poster includes a logo in the top right, a title in the top left, and content arranged in three columns."}
+
+![Letter](https://quarto.org/docs/output-formats/images/typst-format-letter.png){.lightbox group="custom-formats" fig-alt="Screenshot of a page showing a letter. A sender address is across the top of the page, followed by a recipient address left justified. The body of the letter includes a subject line in bold."}
+
+![Dept News](https://quarto.org/docs/output-formats/images/typst-format-dept-news.png){.lightbox group="custom-formats" fig-alt="Screenshot of a page showing a department newsletter. The page is split vertically with a white column on the left and a red one on the right. An image spans across the column with the text \"Award Winning Science\" oriented to run vertically down its right side."}
+
+:::
+
+::: {.aside}
+<https://quarto.org/docs/output-formats/typst.html>
+:::
+
+## `babeldown`による他言語ウェブサイト {.line}
+
+<iframe src="https://swcarpentry-ja.github.io/" width="100%" height="500px"></iframe>
+
+::: {.aside}
+<https://swcarpentry-ja.github.io/>　<https://docs.ropensci.org/babeldown/>
+:::
+
+## ダッシュボード {.line}
+
+::: {layout-ncol="3"}
+![](https://quarto.org/docs/dashboards/examples/thumbnails/stock-explorer-dashboard.png){.border fig-alt="Screenshot of a Stock Trader dashboard: a row of three values boxes, then a row with a stock ticker graph and a table of closing values. Navy blue and green theme."}
+
+![](https://quarto.org/docs/dashboards/examples/thumbnails/customer-churn-dashboard.png){.border fig-alt="Screenshot of a Customer Churn dashboard: a row of three values boxes, then a row with two plots, then a row with a table. Light blue and yellow theme."}
+
+![](https://quarto.org/docs/dashboards/examples/thumbnails/penguins-dashboard.png){.border fig-alt="Screenshot of a Palmer Penguins dashboard: a sidebar with checkboxes and a dropdown, and two plots in main panel. Blue theme."}
+:::
+
+::: {.aside}
+<https://quarto.org/docs/dashboards/>
+:::
+
+## WebR {.line}
+
+## Extensions {.line}
+
+Check out my [{{< ai google-scholar >}} Google Scholar](https://scholar.google.com/citations?hl=en&user=FtzrMYwAAAAJ)

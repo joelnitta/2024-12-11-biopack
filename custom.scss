@@ -1,0 +1,80 @@
+/*-- scss:defaults --*/
+$theme-black: #1b1b1b;
+$theme-teal: #c2ba44;
+$theme-white: #bcb8b9;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique&display=swap');
+
+$body-bg: $theme-black;
+$body-color: $theme-white;
+$link-color: $theme-teal;
+$code-color: $theme-teal;
+
+$font-family-sans-serif: 'Noto Sans JP', sans-serif;
+$presentation-heading-font: 'Zen Kaku Gothic Antique', sans-serif;
+
+/*-- scss:rules --*/
+
+.theme-slide1 {
+  &:is(.slide-background) {
+    background-image: url('https://images.unsplash.com/photo-1505682634904-d7c8d95cdc50');
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+  }
+  h2, h3, h4, h5, p, pre {
+    margin-right: 450px;
+  }
+}
+
+.line {
+  h1, h2, h3, h4, h5 {
+    border-bottom: 2px solid $theme-teal;
+    padding-bottom: 0.2em;
+  }
+}
+
+.tiny {
+  font-size: 20%;
+}
+
+.small {
+  font-size: 40%;
+}
+
+.medsmall {
+  font-size: 60%;
+}
+
+.medium {
+  font-size: 80%;
+}
+
+.normal {
+  font-size: 100%;
+}
+
+.medlarge {
+  font-size: 120%;
+}
+
+.large {
+  font-size: 150%;
+}
+
+.small-margins {
+  padding-top: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.center {
+  padding: 70px 0;
+  text-align: center;
+}
+
+.right {
+  float: right;
+}
