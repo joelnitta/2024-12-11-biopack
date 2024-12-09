@@ -1,11 +1,14 @@
 ---
 format:
-  revealjs:
+  live-revealjs:
     incremental: false
     theme: [dark, custom.scss]
+engine: knitr
 execute: 
   echo: true
 ---
+
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
 
 ## RMarkdownユーザーのためのQuarto {.theme-slide1 .line}
 
@@ -297,7 +300,7 @@ Rの外ですから、`rmarkdown::render()`ではなく、CLIから実行しま�
 <https://quarto.org/docs/output-formats/typst.html>
 :::
 
-## `babeldown`による他言語ウェブサイト {.line}
+## 他言語ウェブサイト {.line}
 
 <iframe src="https://swcarpentry-ja.github.io/" width="100%" height="500px"></iframe>
 
@@ -308,11 +311,11 @@ Rの外ですから、`rmarkdown::render()`ではなく、CLIから実行しま�
 ## ダッシュボード {.line}
 
 ::: {layout-ncol="3"}
-![](https://quarto.org/docs/dashboards/examples/thumbnails/stock-explorer-dashboard.png){.border fig-alt="Screenshot of a Stock Trader dashboard: a row of three values boxes, then a row with a stock ticker graph and a table of closing values. Navy blue and green theme."}
+![](https://quarto.org/docs/dashboards/examples/thumbnails/stock-explorer-dashboard.png){.lightbox group="dashboard" .border fig-alt="Screenshot of a Stock Trader dashboard: a row of three values boxes, then a row with a stock ticker graph and a table of closing values. Navy blue and green theme."}
 
-![](https://quarto.org/docs/dashboards/examples/thumbnails/customer-churn-dashboard.png){.border fig-alt="Screenshot of a Customer Churn dashboard: a row of three values boxes, then a row with two plots, then a row with a table. Light blue and yellow theme."}
+![](https://quarto.org/docs/dashboards/examples/thumbnails/customer-churn-dashboard.png){.lightbox group="dashboard" .border fig-alt="Screenshot of a Customer Churn dashboard: a row of three values boxes, then a row with two plots, then a row with a table. Light blue and yellow theme."}
 
-![](https://quarto.org/docs/dashboards/examples/thumbnails/penguins-dashboard.png){.border fig-alt="Screenshot of a Palmer Penguins dashboard: a sidebar with checkboxes and a dropdown, and two plots in main panel. Blue theme."}
+![](https://quarto.org/docs/dashboards/examples/thumbnails/penguins-dashboard.png){.lightbox group="dashboard" .border fig-alt="Screenshot of a Palmer Penguins dashboard: a sidebar with checkboxes and a dropdown, and two plots in main panel. Blue theme."}
 :::
 
 ::: {.aside}
@@ -320,6 +323,38 @@ Rの外ですから、`rmarkdown::render()`ではなく、CLIから実行しま�
 :::
 
 ## WebR {.line}
+
+:::: {.columns}
+
+::: {.column width="30%"}
+コード
+
+```` markdown
+```{{webr}}
+fit = lm(
+  mpg ~ am,
+  data = mtcars)
+summary(fit)
+plot(fit)
+```
+````
+
+::: {.aside}
+<https://github.com/r-wasm/quarto-live>
+:::
+
+:::
+
+::: {.column width="70%"}
+出力
+```{webr}
+fit = lm(mpg ~ am, data = mtcars)
+summary(fit)
+plot(fit)
+```
+:::
+
+::::
 
 ## Extensions {.line}
 
