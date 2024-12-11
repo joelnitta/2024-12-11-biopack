@@ -207,7 +207,12 @@
 <p><a href="https://biopackathon.connpass.com/event/332275/"><code>Bio"Pack"athon 2014 #12</code></a></p>
 <p><br></p>
 <p><span class="medium"><a href="https://joelnitta.github.io/2024-12-11-biopack" class="uri">https://joelnitta.github.io/2024-12-11-biopack</a></span></p>
-</section>
+
+<aside><div>
+<div class="small">
+<p><a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E8%8C%B6%E8%89%B2%E3%81%AE%E6%9C%A8%E3%81%AE%E6%9D%BF%E3%81%AB%E9%BB%92%E3%81%84%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%BF%E3%82%A4%E3%83%97%E3%83%A9%E3%82%A4%E3%82%BF%E3%83%BC-0gkw_9fy0eQ">Image by Patrick Fore on Unsplash</a></p>
+</div>
+</div></aside></section>
 <section id="自己紹介joelnitta" class="slide level2 line">
 <h2>自己紹介：<code>@joelnitta</code></h2>
 <div class="columns">
@@ -225,16 +230,25 @@
 <section id="誰のためのお話" class="slide level2 line">
 <h2>誰のためのお話？</h2>
 <ul>
-<li><p>RMarkdownを使っている方でQuartoが気になっている方</p></li>
-<li><p>Quartoの初心者</p></li>
+<li>RMarkdownを使っていて、Quartoに興味がある方</li>
+<li>Quarto初心者の方</li>
 </ul>
 </section>
 <section id="注意" class="slide level2 line">
 <h2>注意</h2>
 <ul>
 <li><p>Quartoは非常に<strong>大きなプロジェクト</strong>で、この発表ではとても全部をカバーすることができません。</p></li>
-<li><p>私は<strong>エキスパートではありません</strong>。まだまだ分からないことがいっぱいあります。</p></li>
-<li><p>何か分からないことがある時は<strong>オフィシャルサイト</strong>を参考にしてください <a href="https://quarto.org/" class="uri">https://quarto.org/</a></p></li>
+<li><p>私は<strong>エキスパートではありません</strong>。まだ学んでいる最中です。</p></li>
+<li><p>分からないことがあれば、<strong>公式サイト</strong>を参考にしてください <a href="https://quarto.org/" class="uri">https://quarto.org/</a></p></li>
+</ul>
+</section>
+<section id="アウトライン" class="slide level2">
+<h2>アウトライン</h2>
+<ul>
+<li>Quartoとは？</li>
+<li>QuartoとRMarkdownの違い</li>
+<li>Quartoの活用例</li>
+<li>注意点</li>
 </ul>
 </section>
 <section>
@@ -247,20 +261,21 @@
 <div class="columns">
 <div class="column" style="width:40%;">
 <ul>
-<li><p>R（など）の計算結果を直接文章に挿入するツール</p></li>
-<li><p>様々な出力形式</p></li>
-<li><p>RMarkdownのsuccessor</p></li>
+<li>Rなどの計算結果を文章に直接組み込めるツール</li>
+<li>様々な出力形式に対応</li>
+<li>RMarkdownの後継</li>
 </ul>
 </div><div class="column" style="width:60%;">
 <p><img data-src="https://rstudio.github.io/cheatsheets/html/images/quarto-illustration.png"></p>
 <p><span class="small">Artwork from “Hello, Quarto” keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by <a href="https://allisonhorst.com/cetinkaya-rundel-lowndes-quarto-keynote">Allison Horst</a>.</span></p>
 </div></div>
 </section>
-<section id="なぜquartoを使えばいい" class="slide level2 line smaller">
-<h2>なぜQuartoを使えばいい？</h2>
+<section id="なぜquartoを使うべきか" class="slide level2 line smaller">
+<h2>なぜQuartoを使うべきか？</h2>
 <ul>
-<li><strong>①</strong> <span class="medlarge">RMarkdownよりも<strong>楽</strong>で、機能が<strong>豊富</strong>だからです。</span></li>
-<li><span class="medlarge">RMarkdownでは用途に合わせて色々なパッケージが必要でした</span>
+<li><strong>①</strong> <span class="medlarge">RMarkdownよりも<strong>楽</strong>で、機能が<strong>豊富</strong>だから</span>
+<ul>
+<li><span class="medlarge">RMarkdownでは目的ごとに異なるパッケージが必要でした：</span>
 <ul>
 <li><code>{blogdown}</code> (ブログ)</li>
 <li><code>{xaringan}</code> (スライド)</li>
@@ -268,11 +283,12 @@
 <li><code>{officedown}</code> (MS Word)</li>
 <li><code>{rticles}</code> (学術論文)</li>
 </ul></li>
-<li><span class="medlarge"><strong>Quartoだけでこれが全部できます！</strong></span></li>
+</ul></li>
+<li><span class="medlarge"><strong>Quartoだけでこれがすべて可能です！</strong></span></li>
 </ul>
 </section>
-<section id="なぜquartoを使えばいい-1" class="slide level2 line">
-<h2>なぜQuartoを使えばいい？</h2>
+<section id="なぜquartoを使うべきか-1" class="slide level2 line">
+<h2>なぜQuartoを使うべきか？</h2>
 <ul>
 <li><strong>②</strong> <strong>複数のプログラミング言語</strong>が使える
 <ul>
@@ -286,31 +302,31 @@
 <section id="quartoのインストール" class="slide level2 line">
 <h2>Quartoのインストール</h2>
 <ul>
-<li>RStudioとバンドル化しているので、基本的な使い方はRStudioだけで十分</li>
-<li>更新したい時は個別にインストールが必要（RStudioの更新の際、一緒に更新されません）</li>
-<li><a href="https://quarto.org/docs/get-started/" class="uri">https://quarto.org/docs/get-started/</a>から簡単にできます</li>
+<li>RStudioとバンドルされており、基本的な操作はRStudioだけで可能</li>
+<li>更新時は個別にインストールが必要（RStudioの更新では自動更新されません）</li>
+<li><a href="https://quarto.org/docs/get-started/" class="uri">https://quarto.org/docs/get-started/</a>から簡単にインストールできます</li>
 </ul>
 </section>
 <section id="quartoの使い方" class="slide level2 line">
 <h2>Quartoの使い方</h2>
 <ul>
-<li>ファイル拡張子は<code>.Qmd</code></li>
-<li>基本的にはRmarkdownファイルの記述方法と<strong>同じでもいい</strong>
+<li>ファイル拡張子は<code>.qmd</code></li>
+<li>基本的にはRMarkdownファイルの記述方法と<strong>ほぼ同じ</strong>
 <ul>
-<li>つまり、<code>.Rmd</code>ファイルの拡張子を<code>.Qmd</code>に変えるだけで多くの場合そのまま使えます</li>
+<li><code>.rmd</code>ファイルの拡張子を<code>.qmd</code>に変えるだけで、ほとんどの場合そのまま動作します</li>
 </ul></li>
 </ul>
 </section></section>
 <section>
 <section id="quartoとrmarkdownの違い" class="title-slide slide level1 center">
-<h1>QuartoとRmarkdownの違い</h1>
+<h1>QuartoとRMarkdownの違い</h1>
 
 </section>
-<section id="quartoはrと別物" class="slide level2 line">
-<h2>QuartoはRと別物</h2>
+<section id="quartoはrとは独立したツール" class="slide level2 line">
+<h2>QuartoはRとは独立したツール</h2>
 <ul>
-<li><p>Quarto CLIが必要（RMarkdownはRパッケージ）</p></li>
-<li><p>Pandoc（様々な文書ファイル形式を変換するソフト）を基にしている</p></li>
+<li>Quarto CLIが必要（RMarkdownはRパッケージ）</li>
+<li>Pandoc（文書形式を変換するソフト）を基盤としています</li>
 </ul>
 <blockquote>
 <p>Quarto is an open-source scientific and technical publishing system <strong>built on Pandoc</strong></p>
@@ -326,7 +342,7 @@
 <section id="チャンクオプションの記述法" class="slide level2 line">
 <h2>チャンクオプションの記述法</h2>
 <ul>
-<li>チャンクオプションは <code>{ }</code> の中に書くのではなく、<code>#|</code> コメントを使って、<strong>yml形式</strong>で書きます</li>
+<li>チャンクオプションは <code>{ }</code> の中に書くのではなく、<code>#|</code> コメントを使い、<strong>YAML形式</strong>で記述します</li>
 </ul>
 </section>
 <section class="slide level2">
@@ -360,10 +376,10 @@
 <section id="quarto-yaml" class="slide level2 line">
 <h2>Quarto YAML</h2>
 <ul>
-<li>QuartoのYAML設定はRMarkdownと若干違います。
+<li>QuartoのYAML設定はRMarkdownとは若干異なります
 <ul>
-<li>言葉と言葉の間のマークは <code>_</code>（アンダースコア）ではなく、<code>-</code>（ハイフェン）です</li>
-<li>物によってキーが違います。例えば、出力の種類のキーは<code>output</code>ではなく、<code>format</code>です</li>
+<li>単語間の区切り記号は<code>_</code>（アンダースコア）ではなく<code>-</code>（ハイフン）</li>
+<li>キーが違う場合があります。例：RMarkdownの<code>output</code>はQuartoでは<code>format</code></li>
 </ul></li>
 </ul>
 </section>
@@ -395,30 +411,30 @@
 </div>
 </div>
 </section>
-<section id="レンダーの方法" class="slide level2 line">
-<h2>レンダーの方法</h2>
-<p>Rの外ですから、<code>rmarkdown::render()</code>ではなく、CLIから実行します：</p>
+<section id="レンダー方法" class="slide level2 line">
+<h2>レンダー方法</h2>
+<p>Rとは独立しているため、<code>rmarkdown::render()</code>ではなくCLIで実行します：</p>
 <p><code>quarto render</code></p>
-<p>（<code>{quarto}</code>パッケージには<code>quarto_render()</code>関数がありますが、これはラッパーです）</p>
+<p>（<code>{quarto}</code>パッケージの<code>quarto_render()</code>関数はラッパーです）</p>
 </section>
 <section id="fenced-divの使い方" class="slide level2 line">
 <h2>Fenced Divの使い方</h2>
 <ul>
-<li>Fenced Div とは、カスタム HTML 要素や特定のスタイル、レイアウトを適用するための柔軟な仕組み
+<li>Fenced Divとは、カスタムHTML要素や特定のスタイル、レイアウトを適用するための柔軟な仕組みです。
 <ul>
-<li>元々Pandocで始まった記述法。裏では HTML の<code>div</code>と同じもの。</li>
-<li><code>CSS</code>ファイルを指定することによって、カスタムな<code>div</code>を作ることができます
+<li>元々はPandocで始まった記述法で、裏ではHTMLの<code>div</code>と同じものです。</li>
+<li><code>CSS</code>ファイルを指定することで、カスタムな<code>div</code>を作成可能です。
 <ul>
-<li>文字の色やサイズ、などの指定</li>
+<li>例：文字の色やサイズを指定する</li>
 </ul></li>
 </ul></li>
-<li><code>:::</code> で始まって、また<code>:::</code>で終わる（<code>:</code>の数は三つ以上）</li>
+<li><code>:::</code>で始まり、また<code>:::</code>で終わります（<code>:</code>は三つ以上必要）。</li>
 </ul>
 </section>
 <section class="slide level2">
 
 <ul>
-<li>例えば、スライドショーでは<code>{.incremental}</code>は内容が一つずつ現れるスタイル</li>
+<li>例えば、スライドショーでは<code>{.incremental}</code>を使用すると、内容が一つずつ現れるスタイルを適用できます。</li>
 </ul>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -442,11 +458,11 @@
 <section id="shortcodeの使い方" class="slide level2 line">
 <h2>Shortcodeの使い方</h2>
 <ul>
-<li><p>Shortcodeは「様々な様子を挿入する」とう意味でFenced Divと似ています。</p></li>
-<li><p>書き方：（例えば） <code>{{&lt; meta title &gt;}}</code> を書くと、現在の文章のタイトルを返します。</p></li>
+<li><p>Shortcodeは「様々な要素を挿入する」ための仕組みで、Fenced Divと似ています。</p></li>
+<li><p>書き方の例：<code>{{&lt; meta title &gt;}}</code> と記述すると、現在の文章のタイトルを返します。</p></li>
 <li><p>他のShortcodeの例:</p>
 <ul>
-<li><span class="medium"><code>pagebreak</code>: ページを改める</span></li>
+<li><span class="medium"><code>pagebreak</code>: 改ページを挿入する</span></li>
 <li><span class="medium"><code>video</code>: ビデオを挿入する</span></li>
 <li><span class="medium"><code>include</code>: 別の<code>Qmd</code>ファイルの内容を挿入する</span></li>
 </ul></li>
@@ -467,12 +483,12 @@
 </div></div>
 </section></section>
 <section>
-<section id="quartoができることの例" class="title-slide slide level1 line center">
-<h1>Quartoができることの例</h1>
+<section id="quartoの活用例" class="title-slide slide level1 center">
+<h1>Quartoの活用例</h1>
 
 </section>
 <section id="latexなしのpdftypst" class="slide level2 line">
-<h2>LaTexなしのPDF（Typst）</h2>
+<h2>LaTeXなしのPDF（Typst）</h2>
 <div>
 
 </div>
@@ -578,18 +594,18 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZml0ID0gbG0obXBnIH4gYW0s
 <section id="extensions" class="slide level2">
 <h2>Extensions</h2>
 <ul>
-<li><p>Extensionsとは、Quartoの機能を拡張するコード</p></li>
-<li><p>プロジェクトごとにインストールが必要（Gitのsub repositoryみたいなもの）</p></li>
-<li><p>たくさんあります！ <a href="https://quarto.org/docs/extensions/" class="uri">https://quarto.org/docs/extensions/</a></p></li>
+<li><p>Extensionsとは、Quartoの機能を拡張するためのコードです。</p></li>
+<li><p>プロジェクトごとにインストールが必要です（Gitのサブモジュールのようなものです）。</p></li>
+<li><p>多くのExtensionsが公開されています！ <a href="https://quarto.org/docs/extensions/" class="uri">https://quarto.org/docs/extensions/</a></p></li>
 </ul>
 </section>
 <section class="slide level2">
 
 <ul>
-<li><code>quarto add &lt;gh-org&gt;/&lt;gh-repo&gt;</code> で加える
+<li><code>quarto add &lt;gh-org&gt;/&lt;gh-repo&gt;</code> で追加可能
 <ul>
-<li>例えば <code>quarto add _extensions/schochastics/academicons</code></li>
-<li>加えたコードをコミットするべし</li>
+<li>例：<code>quarto add _extensions/schochastics/academicons</code></li>
+<li>追加したコードはコミットするのがおすすめです</li>
 </ul></li>
 </ul>
 </section>
@@ -610,42 +626,42 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZml0ID0gbG0obXBnIH4gYW0s
 <h1>注意点</h1>
 
 </section>
-<section id="キーが分からないときは検索バーをスマートに使う" class="slide level2">
-<h2>キーが分からないときは検索バーをスマートに使う</h2>
+<section id="キーが分からないときは検索バーを活用する" class="slide level2">
+<h2>キーが分からないときは検索バーを活用する</h2>
 <ul>
-<li><p><a href="https://quarto.org/" class="uri">https://quarto.org/</a>から検索して、<strong>使いたいフォーマット</strong>のドキュメンテーションを見る</p></li>
-<li><p>同じキー（例えば、<code>title</code>）でも、アウトプットのフォーマットによって使い方が異なる場合があります</p></li>
+<li><p><a href="https://quarto.org/" class="uri">https://quarto.org/</a> で検索し、<strong>使用したいフォーマット</strong>のドキュメンテーションを確認してください。</p></li>
+<li><p>同じキー（例：<code>title</code>）でも、出力フォーマットにより使い方が異なる場合があります。</p></li>
 </ul>
 </section>
 <section class="slide level2">
 
 
 <img data-src="images/quarto_website_search.png" class="r-stretch"></section>
-<section id="cssとscssを少し勉強するといい" class="slide level2">
-<h2>CSS（とSCSS）を少し勉強するといい</h2>
+<section id="cssとscssを少し勉強するとよい" class="slide level2">
+<h2>CSS（とSCSS）を少し勉強するとよい</h2>
 <ul>
-<li><p>特にスライドやウェブサイトの作成において重要です</p></li>
-<li><p>Fenced Divの使い方の理解も深まります</p></li>
-<li><p>おすすめ：Emil Hvitfeldtの<a href="https://emilhvitfeldt.com/project/slidecraft-101/">Slidecraft-101</a></p></li>
+<li>特にスライドやウェブサイトの作成時に役立ちます。</li>
+<li>Fenced Divの使い方の理解も深まります。</li>
+<li>おすすめリソース：Emil Hvitfeldtの<a href="https://emilhvitfeldt.com/project/slidecraft-101/">Slidecraft-101</a>および<a href="https://www.youtube.com/watch?v=pAN2Hiq0XGs">Customize appearance with CSS/SCSS</a></li>
 </ul>
 </section>
-<section id="色々なyamlがある" class="slide level2">
-<h2>色々なYAMLがある</h2>
+<section id="様々なyamlが存在する" class="slide level2">
+<h2>様々なYAMLが存在する</h2>
 <ul>
-<li>コードチャンクの中のYAML</li>
-<li>文書（<code>Qmd</code>ファイル）のヘッダーのYAML</li>
+<li>コードチャンク内のYAML</li>
+<li>文書（<code>Qmd</code>ファイル）ヘッダーのYAML</li>
 <li>プロジェクトの<code>_quarto.yml</code></li>
-<li>他にもあります・・</li>
-<li>使いわけがちょっと難しい</li>
+<li>その他も</li>
+<li>使い分けに慣れる必要があります。</li>
 </ul>
 </section>
 <section id="まとめ" class="slide level2">
 <h2>まとめ</h2>
 <ul>
-<li>QuartoはRMarkdownの次世代バージョンです。</li>
+<li>QuartoはRMarkdownの後継です。</li>
 <li>Quartoの機能は非常に豊富で、デザインも洗練されています。</li>
-<li>機能が多すぎて全貌が掴みにくいこともあります。</li>
-<li>どんな小さなプロジェクトでもいいので、とりあえず使ってみるのがおすすめです。</li>
+<li>機能が多いため全貌を把握するのが難しい場合もあります。</li>
+<li>小さなプロジェクトから試してみるのがおすすめです！</li>
 </ul>
 
 <script type="webr-data">
