@@ -22,6 +22,16 @@ execute:
 
 [<https://joelnitta.github.io/2024-12-11-biopack>]{.medium}
 
+::: {.aside}
+
+::: {.small}
+
+[Image by Patrick Fore on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E8%8C%B6%E8%89%B2%E3%81%AE%E6%9C%A8%E3%81%AE%E6%9D%BF%E3%81%AB%E9%BB%92%E3%81%84%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%BF%E3%82%A4%E3%83%97%E3%83%A9%E3%82%A4%E3%82%BF%E3%83%BC-0gkw_9fy0eQ)
+
+:::
+
+:::
+
 ## 自己紹介：`@joelnitta` {.line}
 
 ::::: columns
@@ -40,23 +50,22 @@ execute:
 
 ## 誰のためのお話？ {.line}
 
-- RMarkdownを使っている方でQuartoが気になっている方
-
-- Quartoの初心者
+- RMarkdownを使っていて、Quartoに興味がある方
+- Quarto初心者の方
 
 ## 注意 {.line}
 
 - Quartoは非常に**大きなプロジェクト**で、この発表ではとても全部をカバーすることができません。
 
-- 私は**エキスパートではありません**。まだまだ分からないことがいっぱいあります。
+- 私は**エキスパートではありません**。まだ学んでいる最中です。
 
-- 何か分からないことがある時は**オフィシャルサイト**を参考にしてください <https://quarto.org/>
+- 分からないことがあれば、**公式サイト**を参考にしてください <https://quarto.org/>
 
 ## アウトライン
 
 - Quartoとは？
-- QuartoとRmarkdownの違い
-- Quartoができることの例
+- QuartoとRMarkdownの違い
+- Quartoの活用例
 - 注意点
 
 # Quartoとは？
@@ -66,11 +75,9 @@ execute:
 :::: {.columns}
 
 ::: {.column width="40%"}
-- R（など）の計算結果を直接文章に挿入するツール
-
-- 様々な出力形式
-
-- RMarkdownのsuccessor
+- Rなどの計算結果を文章に直接組み込めるツール
+- 様々な出力形式に対応
+- RMarkdownの後継
 :::
 
 ::: {.column width="60%"}
@@ -82,21 +89,21 @@ execute:
 
 ::::
 
-## なぜQuartoを使えばいい？ {.line .smaller}
+## なぜQuartoを使うべきか？ {.line .smaller}
 
--  **①** [RMarkdownよりも**楽**で、機能が**豊富**だからです。]{.medlarge}
-  - [RMarkdownでは用途に合わせて色々なパッケージが必要でした]{.medlarge}
+- **①** [RMarkdownよりも**楽**で、機能が**豊富**だから]{.medlarge}
+  - [RMarkdownでは目的ごとに異なるパッケージが必要でした：]{.medlarge}
     - `{blogdown}` (ブログ)
     - `{xaringan}` (スライド)
     - `{distill}` (ウェブサイト)
     - `{officedown}` (MS Word)
     - `{rticles}` (学術論文)
 
-- [**Quartoだけでこれが全部できます！**]{.medlarge}
+- [**Quartoだけでこれがすべて可能です！**]{.medlarge}
 
-## なぜQuartoを使えばいい？ {.line}
+## なぜQuartoを使うべきか？ {.line}
 
--  **②** **複数のプログラミング言語**が使える
+- **②** **複数のプログラミング言語**が使える
     - `R`
     - `Python`
     - `Julia`
@@ -104,23 +111,22 @@ execute:
 
 ## Quartoのインストール {.line}
 
-- RStudioとバンドル化しているので、基本的な使い方はRStudioだけで十分
-- 更新したい時は個別にインストールが必要（RStudioの更新の際、一緒に更新されません）
-- <https://quarto.org/docs/get-started/>から簡単にできます
+- RStudioとバンドルされており、基本的な操作はRStudioだけで可能
+- 更新時は個別にインストールが必要（RStudioの更新では自動更新されません）
+- <https://quarto.org/docs/get-started/>から簡単にインストールできます
 
 ## Quartoの使い方 {.line}
 
-- ファイル拡張子は`.Qmd`
-- 基本的にはRmarkdownファイルの記述方法と**同じでもいい**
-    - つまり、`.Rmd`ファイルの拡張子を`.Qmd`に変えるだけで多くの場合そのまま使えます
+- ファイル拡張子は`.qmd`
+- 基本的にはRMarkdownファイルの記述方法と**ほぼ同じ**
+    - `.rmd`ファイルの拡張子を`.qmd`に変えるだけで、ほとんどの場合そのまま動作します
 
-# QuartoとRmarkdownの違い
+# QuartoとRMarkdownの違い
 
-## QuartoはRと別物 {.line}
+## QuartoはRとは独立したツール {.line}
 
 - Quarto CLIが必要（RMarkdownはRパッケージ）
-
-- Pandoc（様々な文書ファイル形式を変換するソフト）を基にしている
+- Pandoc（文書形式を変換するソフト）を基盤としています
 
 > Quarto is an open-source scientific and technical publishing system **built on Pandoc**
 
@@ -134,7 +140,7 @@ execute:
 
 ## チャンクオプションの記述法 {.line}
 
-- チャンクオプションは `{ }` の中に書くのではなく、`#|` コメントを使って、**yml形式**で書きます
+- チャンクオプションは `{ }` の中に書くのではなく、`#|` コメントを使い、**YAML形式**で記述します
 
 ---
 
@@ -179,9 +185,9 @@ ggplot(airquality, aes(Temp, Ozone)) +
 
 ## Quarto YAML {.line}
 
-- QuartoのYAML設定はRMarkdownと若干違います。
-  - 言葉と言葉の間のマークは `_`（アンダースコア）ではなく、`-`（ハイフェン）です
-  - 物によってキーが違います。例えば、出力の種類のキーは`output`ではなく、`format`です
+- QuartoのYAML設定はRMarkdownとは若干異なります
+  - 単語間の区切り記号は`_`（アンダースコア）ではなく`-`（ハイフン）
+  - キーが違う場合があります。例：RMarkdownの`output`はQuartoでは`format`
 
 ---
 
@@ -209,26 +215,26 @@ format:
 ```
 :::
 
-## レンダーの方法 {.line}
+## レンダー方法 {.line}
 
-Rの外ですから、`rmarkdown::render()`ではなく、CLIから実行します：
+Rとは独立しているため、`rmarkdown::render()`ではなくCLIで実行します：
 
 `quarto render`
 
-（`{quarto}`パッケージには`quarto_render()`関数がありますが、これはラッパーです）
+（`{quarto}`パッケージの`quarto_render()`関数はラッパーです）
 
 ## Fenced Divの使い方 {.line}
 
-- Fenced Div とは、カスタム HTML 要素や特定のスタイル、レイアウトを適用するための柔軟な仕組み
-  - 元々Pandocで始まった記述法。裏では HTML の`div`と同じもの。
-  - `CSS`ファイルを指定することによって、カスタムな`div`を作ることができます
-    -  文字の色やサイズ、などの指定
+- Fenced Divとは、カスタムHTML要素や特定のスタイル、レイアウトを適用するための柔軟な仕組みです。
+  - 元々はPandocで始まった記述法で、裏ではHTMLの`div`と同じものです。
+  - `CSS`ファイルを指定することで、カスタムな`div`を作成可能です。
+    - 例：文字の色やサイズを指定する
 
-- `:::` で始まって、また`:::`で終わる（`:`の数は三つ以上）
+- `:::`で始まり、また`:::`で終わります（`:`は三つ以上必要）。
 
 ---
 
-- 例えば、スライドショーでは`{.incremental}`は内容が一つずつ現れるスタイル
+- 例えば、スライドショーでは`{.incremental}`を使用すると、内容が一つずつ現れるスタイルを適用できます。
 
 :::::: columns
 ::: {.column width="50%"}
@@ -254,12 +260,12 @@ Rの外ですから、`rmarkdown::render()`ではなく、CLIから実行しま�
 
 ## Shortcodeの使い方 {.line}
 
-- Shortcodeは「様々な様子を挿入する」とう意味でFenced Divと似ています。
+- Shortcodeは「様々な要素を挿入する」ための仕組みで、Fenced Divと似ています。
 
-- 書き方：（例えば） `{{{< meta title >}}}` を書くと、現在の文章のタイトルを返します。
+- 書き方の例：`{{{< meta title >}}}` と記述すると、現在の文章のタイトルを返します。
 
 - 他のShortcodeの例:
-  - [`pagebreak`: ページを改める]{.medium}
+  - [`pagebreak`: 改ページを挿入する]{.medium}
   - [`video`: ビデオを挿入する]{.medium}
   - [`include`: 別の`Qmd`ファイルの内容を挿入する]{.medium}
 
@@ -282,14 +288,14 @@ Rの外ですから、`rmarkdown::render()`ではなく、CLIから実行しま�
 
 ::: {.column width="40%"}
 #### 出力
-{{< video https://www.youtube.com/embed/wo9vZccmqwc  >}}
+{{< video https://www.youtube.com/embed/wo9vZccmqwc >}}
 :::
 
 ::::
 
-# Quartoができることの例
+# Quartoの活用例
 
-## LaTexなしのPDF（Typst）{.line}
+## LaTeXなしのPDF（Typst）{.line}
 
 ::: {layout-ncol=4}
 
@@ -365,17 +371,17 @@ plot(fit)
 
 ## Extensions
 
-- Extensionsとは、Quartoの機能を拡張するコード
+- Extensionsとは、Quartoの機能を拡張するためのコードです。
 
-- プロジェクトごとにインストールが必要（Gitのsub repositoryみたいなもの）
+- プロジェクトごとにインストールが必要です（Gitのサブモジュールのようなものです）。
 
-- たくさんあります！ <https://quarto.org/docs/extensions/>
+- 多くのExtensionsが公開されています！ <https://quarto.org/docs/extensions/>
 
 ---
 
-- `quarto add <gh-org>/<gh-repo>` で加える
-  - 例えば `quarto add _extensions/schochastics/academicons`
-  - 加えたコードをコミットするべし
+- `quarto add <gh-org>/<gh-repo>` で追加可能
+  - 例：`quarto add _extensions/schochastics/academicons`
+  - 追加したコードはコミットするのがおすすめです
 
 ## Extensionsの例：academicons {.line}
 
@@ -400,35 +406,33 @@ Google Scholar [{{< ai google-scholar >}}](https://scholar.google.com/citations?
 
 # 注意点
 
-## キーが分からないときは検索バーをスマートに使う
+## キーが分からないときは検索バーを活用する
 
-- <https://quarto.org/>から検索して、**使いたいフォーマット**のドキュメンテーションを見る
+- <https://quarto.org/> で検索し、**使用したいフォーマット**のドキュメンテーションを確認してください。
 
-- 同じキー（例えば、`title`）でも、アウトプットのフォーマットによって使い方が異なる場合があります
+- 同じキー（例：`title`）でも、出力フォーマットにより使い方が異なる場合があります。
 
 ---
 
 ![](images/quarto_website_search.png)
 
-## CSS（とSCSS）を少し勉強するといい
+## CSS（とSCSS）を少し勉強するとよい
 
-- 特にスライドやウェブサイトの作成において重要です
+- 特にスライドやウェブサイトの作成時に役立ちます。
+- Fenced Divの使い方の理解も深まります。
+- おすすめリソース：Emil Hvitfeldtの[Slidecraft-101](https://emilhvitfeldt.com/project/slidecraft-101/)および[Customize appearance with CSS/SCSS](https://www.youtube.com/watch?v=pAN2Hiq0XGs)
 
-- Fenced Divの使い方の理解も深まります
+## 様々なYAMLが存在する
 
-- おすすめ：Emil Hvitfeldtの[Slidecraft-101](https://emilhvitfeldt.com/project/slidecraft-101/)
-
-## 色々なYAMLがある
-
-- コードチャンクの中のYAML
-- 文書（`Qmd`ファイル）のヘッダーのYAML
+- コードチャンク内のYAML
+- 文書（`Qmd`ファイル）ヘッダーのYAML
 - プロジェクトの`_quarto.yml`
-- 他にもあります・・
-- 使いわけがちょっと難しい
+- その他も
+- 使い分けに慣れる必要があります。
 
 ## まとめ
 
-- QuartoはRMarkdownの次世代バージョンです。
+- QuartoはRMarkdownの後継です。
 - Quartoの機能は非常に豊富で、デザインも洗練されています。
-- 機能が多すぎて全貌が掴みにくいこともあります。
-- どんな小さなプロジェクトでもいいので、とりあえず使ってみるのがおすすめです。
+- 機能が多いため全貌を把握するのが難しい場合もあります。
+- 小さなプロジェクトから試してみるのがおすすめです！
