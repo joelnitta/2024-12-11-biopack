@@ -295,6 +295,12 @@ Rとは独立しているため、`rmarkdown::render()`ではなくCLIで実行�
 
 # Quartoの活用例
 
+## 発表
+
+- このスライドはQuartoの`revealjs`形式です。
+
+- ソースコード：<https://github.com/joelnitta/2024-12-11-biopack>
+
 ## LaTeXなしのPDF（Typst）{.line}
 
 ::: {layout-ncol=4}
